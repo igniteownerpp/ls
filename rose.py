@@ -104,7 +104,7 @@ def help_cmd(message):
     bot.send_message(message.chat.id, """
 📖 *COMMAND MENU*
 ━━━━━━━━━━━━━━━━━━━━
-🚀 `/attack` IP PORT TIME – *Launch an attack*  
+🚀 `/attack1` IP PORT TIME – *Launch an attack*  
 📝 `/feedback` – *Submit feedback (photo only)*  
 👑 `/vipuser` – *[Admin] Make user VIP*
 🧩 `/setmax` <number> – *[Admin] Set max attacks* 
@@ -116,7 +116,7 @@ def help_cmd(message):
 """, parse_mode="Markdown")
 
 # === COMMAND: /attack ===
-@bot.message_handler(commands=['attack'])
+@bot.message_handler(commands=['attack1'])
 def attack_cmd(message):
     user_id = message.from_user.id
     username = message.from_user.first_name
@@ -142,7 +142,7 @@ def attack_cmd(message):
 
     args = message.text.split()
     if len(args) != 4:
-        bot.send_message(message.chat.id, "🚫 *INVALID FORMAT* 🚫\n\n*BOT IS READY TO USE*\n\n⚙️ *Usage:* `/attack` [ IP ] [ PORT ] [ TIME ]\n ", parse_mode="Markdown")
+        bot.send_message(message.chat.id, "🚫 _INVALID FORMAT_ 🚫\n\n_BOT IS READY TO USE_\n\n⚙️ Usage: `/attack1 IP PORT TIME`\n ", parse_mode="Markdown")
         return
 
     target, port_str, time_str = args[1], args[2], args[3]
