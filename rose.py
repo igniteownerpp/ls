@@ -189,7 +189,7 @@ def attack_cmd(message):
     ), parse_mode="Markdown")
 
     def attack_thread():
-        subprocess.run(f"{RAHUL_PATH} {target} {port} {duration}", shell=True)
+        subprocess.run(f"{RAHUL_PATH} {target} {port} {duration} ", shell=True)
         bot.send_video(message.chat.id, get_random_video(), caption=(
             f"🚀 *Attack Finished!*\n"
             f"📍 `{target}:{port}`\n"
